@@ -28,6 +28,7 @@ public class QRView:NSObject,FlutterPlatformView {
                         for code in codes {
                             let stringValue = code.stringValue!
                             self.channel.invokeMethod("onRecognizeQR", arguments: stringValue)
+                            self.scanner?.stopScanning()
                         }
                     }
                 })
